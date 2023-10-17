@@ -1,6 +1,7 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _PRINTF_H
+#define _PRINTF_H
 
+#include <stdio.h>
 #include <limits.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -10,8 +11,8 @@
 #define BUF_FLUSH -1
 #define NULL_STRING "(null)"
 #define PARAMS_INT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-#define UPPERCASE 2
-#define LAWERCASE 1
+#define CONVERT_UPPERCASE 2
+#define CONVERT_LAWERCASE 1
 
 /**
  * struct par - parameters
@@ -50,7 +51,7 @@ typedef struct space
 {
 	char *space;
 
-	int *(f)(va_list arg, par_t *p);
+	int *(f)(va_list, par_t *);
 
 } space_t;
 

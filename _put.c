@@ -6,13 +6,13 @@
  * Return: void
 */
 
-int _puts(char *str)
+int _puts(char *s)
 {
-	char *a = str;
+	char *a = s;
 
-	while (*str)
-		_putchar(*str++);
-	return (str - a);
+	while (*s)
+		_putchar(*s++);
+	return (s - a);
 }
 
 /**
