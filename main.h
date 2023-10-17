@@ -51,7 +51,7 @@ typedef struct space
 {
 	char *space;
 
-	int *(f)(va_list, par_t *);
+	int (*f)(va_list, par_t *);
 
 } space_t;
 
@@ -59,11 +59,30 @@ typedef struct space
 int _puts(char *s);
 int _putchar(int c);
 
-int print_char(va_list arg, par_t *p);
-int print_int(va_list arg, par_t *p);
-int print_string(va_list arg, par_t *p);
-int print_percent(va_list arg, par_t *p);
-
+int print_char(va_list arg, par_t *par);
+int print_int(va_list arg, par_t *par);
+int print_string(va_list arg, par_t *par);
+int print_percent(va_list arg, par_t *par);
+char *convert(long int n, int b, int flag, par_t *par);
+int print_unsigned(va_list arg, par_t *par);
+int print_adress(va_list arg, par_t *par);
+int (*get_space(char *s))(va_list arg, par_t *par);
+int get_print_func(char *s, va_list arg, par_t *par);
+int get_flag(char *s, par_t *par);
+int get_modifier(char *s, par_t *par);
+int *get_width(char *s, va_list arg, par_t *par);
+int print_hex(va_list arg, par_t *par);
+int print_HEX(va_list arg, par_t *par);
+int print_binary(va_list arg, par_t *par);
+int print_octal(va_list arg, par_t *par);
+int print_from_to(char *r, char *s, char *e);
+int print_rev(va_list arg, par_t *par);
+int print_rot13(va_list arg, par_t *par);
+int _isdigit(int c);
+int _strlen(int *s);
+int print_number(char *s, par_t *par);
+void init_par(va_list arg, par_t *par);
+int get_precision(char *p, par_t *par, va_list arg);
 
 
 int _printf(const char *format, ...);
