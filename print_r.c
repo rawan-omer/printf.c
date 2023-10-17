@@ -27,7 +27,7 @@ int print_from_to(char *r, char *s, char *e)
 int print_rev(va_list arg, par_t *par)
 {
 	int l, sum;
-	char *s = va_arg(arg, char*);
+	char *s = va_arg(arg, char *);
 	(void)par;
 
 	if (s)

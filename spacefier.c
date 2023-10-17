@@ -66,16 +66,16 @@ int get_flag(char *s, par_t *par)
 		case '+':
 			z = par->plus_flag = 1;
 			break;
-		case '#'
+		case '#':
 			z = par->hashtag_flag = 1;
 			break;
-		case ' '
+		case ' ':
 			z = par->space_flag = 1;
 			break;
-		case '-'
+		case '-':
 			z = par->minus_flag = 1;
 			break;
-		case '0'
+		case '0':
 			z = par->zero_flag = 1;
 			break;
 	}
@@ -108,7 +108,7 @@ int get_modifier(char *s, par_t *par)
  * @par: the parameters
  * Return: pointer
 */
-int get_width(char *s, par_t *par, va_list arg)
+int *get_width(char *s, par_t *par, va_list arg)
 {
 	int z = 0;
 
@@ -119,7 +119,7 @@ int get_width(char *s, par_t *par, va_list arg)
 	}
 	else
 	{
-		while (is_digit(*s))
+		while (_isdigit(*s))
 			z = z * 10 + (*s++ - '0');
 	}
 	par->width = z;

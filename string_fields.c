@@ -7,7 +7,7 @@
  * @par: the parameters
  * Return: pointer
 */
-int get_precision(char *p, par_t *par, va_list arg)
+int *get_precision(char *p, par_t *par, va_list arg)
 {
 	int z = 0;
 
@@ -22,7 +22,7 @@ int get_precision(char *p, par_t *par, va_list arg)
 	}
 	else
 	{
-		while (is_digit(*p))
+		while (_isdigit(*p))
 			z = z * 10 + (*p++ - '0');
 	}
 	par->precision = z;
